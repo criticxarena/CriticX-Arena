@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 20px;
 }
 
 body {
@@ -430,6 +431,80 @@ h1 span,
   font-size: 12px;
 }
 
+/* Support section */
+
+#support {
+  position: relative;
+}
+
+#support .section-heading .eyebrow {
+  margin-bottom: 18px;
+}
+
+#support .feature-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 22px;
+}
+
+.support-card {
+  display: block;
+  min-height: 220px;
+  padding: 30px;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid rgba(255,138,0,.25);
+  background:
+    radial-gradient(ellipse at top right, rgba(255,138,0,.08), transparent 65%),
+    linear-gradient(145deg, #151a23, #10141b);
+  border-radius: 12px;
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange);
+  box-shadow: 0 12px 35px rgba(255,138,0,.10);
+}
+
+.support-card .feature-icon {
+  width: 54px;
+  height: 54px;
+  font-size: 26px;
+}
+
+.support-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.support-card p {
+  font-size: 13px;
+}
+
+.support-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: color .25s ease;
+}
+
+.support-card:hover .support-link {
+  color: var(--orange-light);
+}
+
+.support-card:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+}
+
 /* Download section */
 
 .download-section {
@@ -491,9 +566,14 @@ footer {
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   font-size: 11px;
   color: #aab1be;
+}
+
+.footer-links a {
+  transition: color .2s ease;
 }
 
 .footer-links a:hover {
@@ -530,6 +610,10 @@ footer {
 
   .mode-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  #support .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -622,6 +706,20 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  #support .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .support-card {
+    min-height: auto;
+    padding: 25px 23px;
+  }
+
+  .support-card h3 {
+    font-size: 17px;
+  }
+
   .download-panel {
     padding: 42px 17px;
   }
@@ -629,5 +727,10 @@ footer {
   .footer-inner {
     justify-content: center;
     text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+    gap: 14px;
   }
 }
